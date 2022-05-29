@@ -61,6 +61,7 @@ input {
     outline: none;
     border-radius: 5px;
     padding: .1rem;
+    cursor: pointer;
 }
 
 label {
@@ -73,4 +74,38 @@ label {
 
 .top-div {
     display: flex;
+}
+
+/* Sliders */
+input[type=range] {
+    display: flex;
+    align-self: center;
+    -webkit-appearance: white;
+    height: 2px;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, .4);
+    color: white;
+    /* Hides the slider so that custom slider can be made */
+    width: 100%;
+    /* Specific width is required for Firefox. */
+    background: transparent;
+    /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: white;
+}
+
+input[type=range]:focus {
+    outline: white;
+    /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: white;
 }
